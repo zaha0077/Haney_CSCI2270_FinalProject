@@ -253,7 +253,6 @@ void Jukebox::setDefault(){
 //Search the archive and return a song.
 Song* Jukebox::searchSong(std::string title){
 	bool found = 0;
-	//Song* yourSong;
 	
 	int key = hashSum(title,tableSize);
 	Song* trace = hashTable[key];
