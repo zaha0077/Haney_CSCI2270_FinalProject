@@ -267,24 +267,9 @@ Song* Jukebox::searchSong(std::string title){
 		}
 	if (found == 1) return trace;
 	else return NULL; //Return NULL if not found.
-	
-	
-	/*for (int i = 0; i < tableSize; i++){ //Search the table indexes.
-		Song* trace = hashTable[i];
-		while (trace != NULL){ //Search linked lists if applicable.
-			if (trace->title == title){
-				found = 1;
-				yourSong = trace;
-				break;
-				}
-			else
-			trace = trace->next;
-			}
-		if (found == 1) break;
-		}
-	if (found == 1) return yourSong;
-	else return NULL; *///Return NULL if not found.
+
 	}
+	
 //Hash sum.
 int Jukebox::hashSum(std::string inTitle, int size){
 	int sum = 0;
