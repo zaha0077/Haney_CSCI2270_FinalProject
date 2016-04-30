@@ -26,7 +26,7 @@ int main(){
 		cout << "11. Quit." << endl;
 		
 		cin >> choice;
-		
+
 		if (choice == 1){
 			string inpt1;
 			string inpt2;
@@ -36,7 +36,7 @@ int main(){
 			getline(cin,inpt1);
 			cout << "Enter Artist: " << endl;
 			getline(cin,inpt2);
-			
+
 			box.addSong(inpt1,inpt2);
 			}
 		else if (choice == 2){
@@ -84,12 +84,15 @@ int main(){
 		else if (choice == 11){
 			break;
 			}
+		else {
+			cin.clear();
+			cin.ignore(1000,'\n');
+			}
+		}				
 		
-		}
-	
-	
-	
-	
+
+
+
 	cout << "Goodbye!" << endl;
 	return 0;
 	}
