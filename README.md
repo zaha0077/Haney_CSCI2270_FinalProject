@@ -84,4 +84,4 @@ None
 -------------------------------------
 Open Issues/Bugs:
 -------------------------------------
-Adding a song to the playlist, deleting, it, and then running the playlist will produce errors.
+Adding a song to the playlist, deleting the song, not clearing the playlist, and then playing either the first song or the entire playlist will produce errors.
