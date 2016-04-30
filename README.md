@@ -84,4 +84,4 @@ None
 -------------------------------------
 Open Issues/Bugs:
 -------------------------------------
-None, as of yet.
+Adding a song to the playlist, deleting, it, and then running the playlist will produce errors.
