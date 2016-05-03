@@ -33,7 +33,7 @@ Adding a song:
 Allows users to add their own song to the archive. When this option is selected, the user is prompted to input a song name and a song artist. And the program will then add that song to the archive. For instance, if one were to select 1, they could enter "Rock Lobster" as the title, and "B-52's" as the artist and the song will be added to the archive.  
 
 Deleting a song: 
-Allows a user to remove a song from the archive. The user is prompted for the title of the target song, and if that song exists, that song is removed from the archive completely.
+Allows a user to remove a song from the archive. The user is prompted for the title of the target song, and if that song exists, that song is removed from the archive completely. In order to prevent errors, the user is required to either play all the songs in or clear the playlist before deleting a song.
 
 Finding a song: 
 Prompts the user for a song title and then searches the archive for a matching song, outputting its title and artist if it exists. For instance, inputting "Megitsune" will output the song's title and artist as "Baby Metal", while an input of "Yes" will yield "Song 'Yes' not found." 
@@ -79,9 +79,9 @@ Zachary Haney
 -------------------------------------
 Contributors:
 -------------------------------------
-None
+dingjunweng
 
 -------------------------------------
 Open Issues/Bugs:
 -------------------------------------
-Adding a song to the playlist, deleting the song, not clearing the playlist, and then playing either the first song or the entire playlist will produce errors.
+None, currently.
