@@ -84,9 +84,10 @@ int main(){
 		else if (choice == 11){
 			break;
 			}
-		else {
+		else { //Invalid input handling.
 			cin.clear();
 			cin.ignore(1000,'\n');
+			cout << "Invalid input. Try again! (Only integer values between between 1 and 11 are accepted.)" << endl;
 			}
 		}				
 		

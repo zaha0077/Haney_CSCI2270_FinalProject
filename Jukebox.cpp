@@ -42,38 +42,42 @@ void Jukebox::addSong(std::string title, std::string artist){
 void Jukebox::deleteSong(std::string title){
 	bool found = 0; //Bool to check if the target song exists.
 	int key = hashSum(title,tableSize);
-	
-	Song * seek = hashTable[key]; //Jump to the index of target song.
-	if (seek!=NULL){
-		while (seek!=NULL){ //search the list at that index for the song.
-				if (title.compare(seek->title) == 0){
-					if (seek->next != NULL){ //Cases where not at the end of the list.
-						if (seek->prev != NULL){
-							seek->prev->next = seek->next;
-							seek->next->prev = seek->prev;
+	if (playList.empty()){ //Check if the playlist is empty to prevent errors.
+		Song * seek = hashTable[key]; //Jump to the index of target song.
+		if (seek!=NULL){
+			while (seek!=NULL){ //search the list at that index for the song.
+					if (title.compare(seek->title) == 0){
+						if (seek->next != NULL){ //Cases where not at the end of the list.
+							if (seek->prev != NULL){
+								seek->prev->next = seek->next;
+								seek->next->prev = seek->prev;
+								}
+							else{
+								seek->next->prev = NULL;
+								hashTable[key] = seek->next;
+								}
 							}
-						else{
-							seek->next->prev = NULL;
-							hashTable[key] = seek->next;
+						else{ //Cases where at the end of the list
+							if (seek->prev == NULL) hashTable[key] = NULL;
+							else seek->prev->next = NULL;
 							}
+						found = 1;
+						delete seek;
+						cout << title << " deleted." << endl;
+						break;
 						}
-					else{ //Cases where at the end of the list
-						if (seek->prev == NULL) hashTable[key] = NULL;
-						else seek->prev->next = NULL;
-						}
-					found = 1;
-					delete seek;
-					break;
+					seek = seek->next;
 					}
-				seek = seek->next;
-				}
-		
-		
+			
+			
+			}
+		if (found == 0){ //If the target song was not found.
+			cout << "Song '" << title << "' not found." << endl;
+			}
 		}
-	if (found == 0){ //If the target song was not found.
-		cout << "Song '" << title << "' not found." << endl;
-		}
-	
+		else{ //if there is something in the playlist.
+			cout << "Please clear or empty the playlist before attempting to delete a song from the archive." << endl;
+			}
 	}
 	
 //Find a song in the archive.
